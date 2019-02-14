@@ -5,17 +5,29 @@
     "images-in-retweet-to-s3": "bin/images-in-retweet-to-s3.js"
   },
   "scripts": {
-    "build": "tsc",
-    "watch": "tsc -w",
+    "build:app": "parcel build src/index.ts --target=node --bundle-node-modules",
+    "build:cdk": "tsc",
+    "watch:app": "parcel watch src/index.ts --target=node --bundle-node-modules",
+    "watch:cdk": "tsc -w",
     "cdk": "cdk"
   },
   "devDependencies": {
+    "@types/aws-lambda": "^8.10.19",
     "@types/node": "^8.9.4",
-    "typescript": "^3.1.2",
-    "aws-cdk": "^0.24.1"
+    "@types/twitter": "^1.7.0",
+    "aws-cdk": "^0.24.1",
+    "parcel-bundler": "^1.11.0",
+    "typescript": "^3.1.2"
   },
   "dependencies": {
+    "@aws-cdk/aws-cloudwatch": "^0.24.1",
+    "@aws-cdk/aws-events": "^0.24.1",
+    "@aws-cdk/aws-lambda": "^0.24.1",
+    "@aws-cdk/aws-s3": "^0.24.1",
     "@aws-cdk/cdk": "^0.24.1",
-    "source-map-support": "^0.5.9"
+    "aws-sdk": "^2.402.0",
+    "axios": "^0.18.0",
+    "source-map-support": "^0.5.9",
+    "twitter": "^1.7.1"
   }
 }
